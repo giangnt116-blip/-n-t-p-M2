@@ -1,0 +1,6 @@
+{
+  "name": "M2 LOGIC LAB",
+  "description": "Học tư duy bằng mô phỏng – Chinh phục M2 từng bước dành cho học sinh lớp 6",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
