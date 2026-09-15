@@ -78,6 +78,14 @@ export const ResultPage: React.FC<ResultPageProps> = ({ onNavigate }) => {
           {/* Navigation CTA */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
             <button
+              onClick={() => onNavigate("/diagnostic/D13")}
+              className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-2xl bg-amber-500 px-6 py-3.5 text-sm font-extrabold text-white shadow-md shadow-amber-200 hover:bg-amber-600 active:scale-95 transition"
+            >
+              <Sparkles className="h-4 w-4 text-white" />
+              <span>Luyện Phần B: Củng cố (D13–D19) →</span>
+            </button>
+
+            <button
               onClick={() => onNavigate("/review")}
               className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-2xl bg-indigo-600 px-6 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-indigo-700 active:scale-95 transition"
             >

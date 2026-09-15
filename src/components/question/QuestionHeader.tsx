@@ -12,8 +12,11 @@ export const QuestionHeader: React.FC<QuestionHeaderProps> = ({
   question,
   totalQuestions,
 }) => {
-  const formattedOrder = String(question.order).padStart(2, "0");
-  const formattedTotal = String(totalQuestions).padStart(2, "0");
+  const isPartB = question.part === "B" || question.order > 12;
+  const partOrder = isPartB ? question.order - 12 : question.order;
+  const partTotal = isPartB ? 10 : 12;
+  const formattedPartOrder = String(partOrder).padStart(2, "0");
+  const formattedPartTotal = String(partTotal).padStart(2, "0");
 
   const renderStars = (difficulty: 1 | 2 | 3) => {
     return Array.from({ length: 3 }).map((_, idx) => (
@@ -44,8 +47,14 @@ export const QuestionHeader: React.FC<QuestionHeaderProps> = ({
       {/* Top Meta Row */}
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="flex items-center gap-2">
-          <span className="rounded-md bg-indigo-100/80 px-2.5 py-1 text-xs font-black tracking-wider text-indigo-800">
-            THỬ THÁCH {formattedOrder} / {formattedTotal}
+          <span
+            className={`rounded-md px-2.5 py-1 text-xs font-black tracking-wider ${
+              isPartB
+                ? "bg-amber-100 text-amber-900 ring-1 ring-amber-300"
+                : "bg-indigo-100/80 text-indigo-800"
+            }`}
+          >
+            {isPartB ? "PHẦN B: CỦNG CỐ" : "PHẦN A: KHỞI ĐỘNG"} • {formattedPartOrder} / {formattedPartTotal}
           </span>
 
           <div

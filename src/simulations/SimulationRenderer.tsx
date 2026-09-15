@@ -12,6 +12,13 @@ import { TakeAwayGame } from "./TakeAwayGame";
 import { EnergyGraphLab } from "./EnergyGraphLab";
 import { ConstraintLab } from "./ConstraintLab";
 import { BattleshipLab } from "./BattleshipLab";
+import { ToleranceLab } from "./ToleranceLab";
+import { Base3AbacusLab } from "./Base3AbacusLab";
+import { CubeConstraintLab } from "./CubeConstraintLab";
+import { LatinSquareLab } from "./LatinSquareLab";
+import { CodeScannerLab } from "./CodeScannerLab";
+import { NumberFilterLab } from "./NumberFilterLab";
+import { WindowOptimizationLab } from "./WindowOptimizationLab";
 import { SimulationPlaceholder } from "./SimulationPlaceholder";
 
 interface SimulationRendererProps {
@@ -65,6 +72,27 @@ export const SimulationRenderer: React.FC<SimulationRendererProps> = ({
 
     case "battleshipLab":
       return <BattleshipLab config={simulation.config} mode={mode} />;
+
+    case "toleranceLab":
+      return <ToleranceLab config={simulation.config} mode={mode} />;
+
+    case "base3AbacusLab":
+      return <Base3AbacusLab config={simulation.config} mode={mode} />;
+
+    case "cubeConstraintLab":
+      return <CubeConstraintLab config={simulation.config} mode={mode} />;
+
+    case "latinSquareLab":
+      return <LatinSquareLab config={simulation.config} mode={mode} />;
+
+    case "codeScannerLab":
+      return <CodeScannerLab config={simulation.config} mode={mode} />;
+
+    case "numberFilterLab":
+      return <NumberFilterLab config={simulation.config} mode={mode} />;
+
+    case "windowOptimizationLab":
+      return <WindowOptimizationLab config={simulation.config} mode={mode} />;
 
     default:
       return (

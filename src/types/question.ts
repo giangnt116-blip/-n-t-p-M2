@@ -11,13 +11,16 @@ export interface QuestionChoice {
 
 export interface QuestionHint {
   level: 1 | 2 | 3;
-  text: string;
+  text?: string;
+  content?: string;
+  title?: string;
+  cost?: string;
 }
 
 export interface QuestionSimulation {
   type: string;
   name?: string;
-  config?: Record<string, unknown>;
+  config?: Record<string, any>;
 }
 
 export type Simulation = QuestionSimulation;
@@ -26,6 +29,8 @@ export interface Question {
   id: string;
   title: string;
   order: number;
+  part?: "A" | "B";
+  status?: "available" | "coming_soon";
   difficulty: DifficultyLevel;
   skills: string[];
 
@@ -41,6 +46,9 @@ export interface Question {
   answer: {
     value: string | number | string[];
     displayValue?: string;
+    type?: string;
+    unit?: string;
+    tolerance?: number;
   };
 
   hints: QuestionHint[];

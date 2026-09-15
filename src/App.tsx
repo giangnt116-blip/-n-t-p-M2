@@ -8,7 +8,8 @@ import { DiagnosticPage } from "./pages/DiagnosticPage";
 import { ResultPage } from "./pages/ResultPage";
 import { ReviewPage } from "./pages/ReviewPage";
 import { DIAGNOSTIC_QUESTIONS } from "./data/diagnostic";
-import { loadDiagnosticState } from "./utils/storage";
+import { ALL_MODULE0_QUESTIONS, getQuestionById } from "./data/allQuestions";
+import { loadDiagnosticState, loadPracticeState } from "./utils/storage";
 
 export default function App() {
   // Initialize route from current window.location.pathname
@@ -38,10 +39,19 @@ export default function App() {
 
   // Find next unanswered question or first question
   const getNextQuestionId = (): string => {
-    const state = loadDiagnosticState();
+    const diagState = loadDiagnosticState();
+    // Check Part A first
     for (const q of DIAGNOSTIC_QUESTIONS) {
-      if (!state.answers[q.id]) {
+      if (!diagState.answers[q.id]) {
         return q.id;
+      }
+    }
+    // Then check Part B available questions
+    const practiceState = loadPracticeState();
+    const partBAvailable = ["D13", "D14", "D15"];
+    for (const id of partBAvailable) {
+      if (!practiceState.answers[id]) {
+        return id;
       }
     }
     return DIAGNOSTIC_QUESTIONS[0].id;
@@ -61,10 +71,10 @@ export default function App() {
       return <CoursePage onNavigate={navigate} />;
     }
 
-    // 3. Diagnostic Question Page: /diagnostic/:questionId (e.g. /diagnostic/D01)
+    // 3. Diagnostic Question Page: /diagnostic/:questionId (e.g. /diagnostic/D01, /diagnostic/D13)
     if (path.startsWith("/diagnostic/")) {
       const qId = path.replace("/diagnostic/", "").trim();
-      const validQ = DIAGNOSTIC_QUESTIONS.find((q) => q.id === qId);
+      const validQ = getQuestionById(qId);
       const activeQId = validQ ? validQ.id : DIAGNOSTIC_QUESTIONS[0].id;
 
       return (
