@@ -20,6 +20,8 @@ import { CodeScannerLab } from "./CodeScannerLab";
 import { NumberFilterLab } from "./NumberFilterLab";
 import { WindowOptimizationLab } from "./WindowOptimizationLab";
 import { AnimalLegLab } from "./AnimalLegLab";
+import { TowerJourneyLab } from "./TowerJourneyLab";
+import { CalendarLogicLab } from "./CalendarLogicLab";
 import { SimulationPlaceholder } from "./SimulationPlaceholder";
 
 interface SimulationRendererProps {
@@ -97,6 +99,12 @@ export const SimulationRenderer: React.FC<SimulationRendererProps> = ({
 
     case "animalLegLab":
       return <AnimalLegLab config={simulation.config} mode={mode} />;
+
+    case "towerJourneyLab":
+      return <TowerJourneyLab config={simulation.config} mode={mode} />;
+
+    case "calendarLogicLab":
+      return <CalendarLogicLab config={simulation.config} mode={mode} />;
 
     default:
       return (

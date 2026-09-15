@@ -111,8 +111,8 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
                   Đã làm: <strong className="text-slate-800">{partBAnswered}</strong>
                 </span>
                 <span className="flex items-center gap-1">
-                  <span className="h-2 w-2 rounded-full bg-amber-400" />
-                  D13–D20 mở • D21–D22 sắp mở
+                  <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                  D13–D22 mở đầy đủ (10/10)
                 </span>
               </>
             )}

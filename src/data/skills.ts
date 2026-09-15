@@ -290,6 +290,36 @@ export const SKILLS_DICTIONARY: Record<string, SkillMeta> = {
     badgeBorder: "border-amber-200",
     description: "Thiết lập quan hệ nghiệm nguyên, bất đẳng thức và giới hạn biến số.",
   },
+  distance_reasoning: {
+    id: "distance_reasoning",
+    name: "Distance Reasoning",
+    vietnameseLabel: "Tư duy Quãng đường & Đoạn thẳng",
+    icon: "Route",
+    color: "text-blue-600",
+    badgeBg: "bg-blue-50 text-blue-700",
+    badgeBorder: "border-blue-200",
+    description: "Mô hình hóa hành trình di chuyển thành các đoạn thẳng có khoảng cách cụ thể.",
+  },
+  equation: {
+    id: "equation",
+    name: "Equation",
+    vietnameseLabel: "Thiết lập Phương trình",
+    icon: "Equal",
+    color: "text-indigo-600",
+    badgeBg: "bg-indigo-50 text-indigo-700",
+    badgeBorder: "border-indigo-200",
+    description: "Chuyển đổi các điều kiện ngôn ngữ thành đẳng thức toán học để tìm ẩn số.",
+  },
+  calendar_logic: {
+    id: "calendar_logic",
+    name: "Calendar Logic",
+    vietnameseLabel: "Suy luận Lịch & Ngày trong tuần",
+    icon: "Calendar",
+    color: "text-rose-600",
+    badgeBg: "bg-rose-50 text-rose-700",
+    badgeBorder: "border-rose-200",
+    description: "Vận dụng chu kỳ 7 ngày và tính chẵn/lẻ của ngày trong tháng để suy đoán thứ.",
+  },
 };
 
 export const CORE_SKILL_GROUPS = [
