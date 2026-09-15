@@ -50,7 +50,7 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
         ],
       },
     },
-    teachingPoint: "Loại bỏ phần giống nhau ở hai phía.",
+    teachingPoint: "Cân bằng nghĩa là tổng hai vế bằng nhau.",
     explanation: [
       "Bước 1: Ta lập hệ thức cân bằng ban đầu: 1 Táo + 2 Lê = 2 Táo + 1 Lê.",
       "Bước 2: Bớt đồng thời 1 quả Táo và 1 quả Lê ở cả hai đĩa cân (áp dụng nguyên lý khử đại lượng tương đương).",
@@ -85,7 +85,7 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
       },
       {
         level: 3,
-        text: "2 chiếc bàn ở hai đầu mỗi bàn có 3 cạnh ngoài tự do (2 × 3 = 6 chỗ). 5 chiếc bàn ở giữa mỗi bàn chỉ còn 2 cạnh trống trên và dưới (5 × 2 = 10 chỗ). Tổng = 6 + 10.",
+        text: "Hãy tính số cạnh ngoài của 2 chiếc bàn ở hai đầu (mỗi bàn có 3 cạnh ngoài tự do) rồi cộng với số cạnh ngoài của 5 chiếc bàn ở giữa (mỗi bàn còn 2 cạnh trống trên và dưới).",
       },
     ],
     simulation: {
@@ -188,7 +188,7 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
       },
       {
         level: 3,
-        text: "Khoảng cách ngắn nhất là 3 đoạn. Hãy liệt kê tất cả các lộ trình gồm đúng 3 cây cầu: A-B-D-F, A-B-E-F, A-C-D-F.",
+        text: "Hãy thử tìm lộ trình qua các tầng: A → {B, C} → {D, E} → F. Đếm xem có tất cả bao nhiêu đường đi hợp lệ gồm 3 cây cầu nối trực tiếp.",
       },
     ],
     simulation: {
@@ -216,7 +216,7 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
         target: "F",
       },
     },
-    teachingPoint: "Địa điểm và đường nối có thể được mô hình hóa bằng graph.",
+    teachingPoint: "Khám phá đồ thị là tìm đường đi thỏa mãn ràng buộc.",
     explanation: [
       "Bước 1: Phân tầng khoảng cách (BFS) từ đảo xuất phát A:\n- Tầng 0: {A}\n- Tầng 1 (1 đoạn): {B, C}\n- Tầng 2 (2 đoạn): {D, E} (qua B-D, B-E, C-D)\n- Tầng 3 (3 đoạn): {F} (qua D-F, E-F)\nNhư vậy đường đi ngắn nhất tốn đúng 3 đoạn đường.",
       "Bước 2: Đếm số đường đi ngắn nhất có độ dài 3:\n• Đường 1: A → B → D → F\n• Đường 2: A → B → E → F\n• Đường 3: A → C → D → F",
@@ -401,7 +401,7 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
         },
       },
     },
-    teachingPoint: "Mỗi người một việc – mỗi việc một người.",
+    teachingPoint: "Bắt đầu từ đối tượng bị giới hạn nhiều nhất.",
     explanation: [
       "Bước 1: Phân tích theo các khả năng của Hải ly 5 (người có 3 khả năng: A, B, D):",
       "Trường hợp 1: Hải ly 5 làm A.\n• Hải ly 1 buộc phải làm B (vì A đã bị 5 nhận).\n• Hải ly 3 buộc phải làm E (vì B đã bị 1 nhận).\n• Hải ly 4 buộc phải làm C (vì E đã bị 3 nhận).\n• Hải ly 2 buộc phải làm D (vì C đã bị 4 nhận).\n→ Kết quả: (5-A, 1-B, 3-E, 4-C, 2-D): Hợp lệ! (1 cách)",
@@ -547,15 +547,15 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
     hints: [
       {
         level: 1,
-        text: "Mỗi quân Domino [x|y] có thể coi là một đoạn thẳng (cạnh) nối giữa đỉnh x và đỉnh y trên đồ thị.",
+        text: "Mỗi quân Domino có 2 số ở hai đầu, giống như một cạnh nối hai điểm.",
       },
       {
         level: 2,
-        text: "Bài toán tương đương với việc tìm đường đi Euler đi qua mỗi cạnh đúng 1 lần.",
+        text: "Để tạo thành một chuỗi liên tục, mỗi con số ở giữa chuỗi phải xuất hiện mấy lần (mỗi lần đi vào phải đi ra)?",
       },
       {
         level: 3,
-        text: "Đếm số lần xuất hiện (bậc) của các số: số 1 (3 lần), số 2 (3 lần), số 3 (2 lần), số 4 (2 lần). Một đồ thị có đúng 2 đỉnh bậc lẻ thì có đường đi Euler không?",
+        text: "Hãy đếm số lần xuất hiện của từng con số trong 5 quân Domino: số 1 (3 lần), số 2 (3 lần), số 3 (2 lần), số 4 (2 lần). Có bao nhiêu số xuất hiện lẻ lần?",
       },
     ],
     simulation: {
@@ -571,11 +571,11 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
         ],
       },
     },
-    teachingPoint: "Hãy quan sát cách các đầu của domino kết nối với nhau.",
+    teachingPoint: "Hai đầu đặc biệt của chuỗi liên quan đến những số xuất hiện lẻ lần.",
     explanation: [
-      "Bước 1: Mô hình hóa bằng Đồ thị Euler: Coi các số {1, 2, 3, 4} là các đỉnh. Mỗi quân Domino là một cạnh nối 2 đỉnh.",
-      "Bước 2: Tính bậc (số đầu nối) của từng đỉnh:\n• Đỉnh 1: tham gia trong [1|2], [3|1], [1|4] → Bậc 3 (bậc lẻ)\n• Đỉnh 2: tham gia trong [1|2], [2|3], [4|2] → Bậc 3 (bậc lẻ)\n• Đỉnh 3: tham gia trong [2|3], [3|1] → Bậc 2 (bậc chẵn)\n• Đỉnh 4: tham gia trong [1|4], [4|2] → Bậc 2 (bậc chẵn)",
-      "Bước 3: Định lý Euler: Đồ thị liên thông có đúng 2 đỉnh bậc lẻ (ở đây là đỉnh 1 và đỉnh 2) luôn tồn tại một đường đi Euler xuất phát từ một đỉnh lẻ và kết thúc tại đỉnh lẻ kia.",
+      "Bước 1: Mô hình hóa: Coi các số {1, 2, 3, 4} là các điểm. Mỗi quân Domino là một đoạn nối 2 điểm.",
+      "Bước 2: Đếm số lần xuất hiện của từng số:\n• Số 1: tham gia trong [1|2], [3|1], [1|4] → Xuất hiện 3 lần (lẻ lần)\n• Số 2: tham gia trong [1|2], [2|3], [4|2] → Xuất hiện 3 lần (lẻ lần)\n• Số 3: tham gia trong [2|3], [3|1] → Xuất hiện 2 lần (chẵn lần)\n• Số 4: tham gia trong [1|4], [4|2] → Xuất hiện 2 lần (chẵn lần)",
+      "Bước 3: Quy luật chuỗi: Các số ở giữa chuỗi mỗi lần đi vào phải đi ra nên luôn xuất hiện chẵn lần. Chỉ có hai số ở hai đầu chuỗi mới có thể xuất hiện lẻ lần. Vì có đúng 2 số lẻ lần (số 1 và số 2) nên chắc chắn xếp được chuỗi liên tục với hai đầu là 1 và 2!",
       "Ví dụ chuỗi hợp lệ: [1|3] nối [3|2] nối [2|4] nối [4|1] nối [1|2]. Cả 5 quân đều được dùng trọn vẹn đúng 1 lần. Đáp án là: Có.",
     ],
   },
@@ -625,7 +625,7 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
         },
       },
     },
-    teachingPoint: "Tối ưu gồm mục tiêu và ràng buộc.",
+    teachingPoint: "Muốn kiểm soát tổng của bất kỳ 3 số nào, chỉ cần kiểm soát tổng của 3 số lớn nhất.",
     explanation: [
       "Bước 1: Gọi 10 số nguyên dương sắp xếp theo thứ tự không giảm là: a1 ≤ a2 ≤ a3 ≤ ... ≤ a8 ≤ a9 ≤ a10.",
       "Bước 2: Ràng buộc 'bất kỳ 3 số nào có tổng ≤ 14' áp dụng cho 3 số lớn nhất là: a8 + a9 + a10 ≤ 14.\nVì a8 ≤ a9 ≤ a10 nên: 3 × a8 ≤ a8 + a9 + a10 ≤ 14 → a8 ≤ 14/3 ≈ 4.67.\nVì a8 là số nguyên dương nên giá trị cực đại của a8 là 4.",
@@ -674,7 +674,7 @@ export const DIAGNOSTIC_QUESTIONS: Question[] = [
         orientations: ["horizontal", "vertical"],
       },
     },
-    teachingPoint: "Không phải tìm cách có thể thắng, mà là cách chắc chắn thắng.",
+    teachingPoint: "Muốn CHẮC CHẮN trúng, không được để sót bất kỳ vị trí hợp lệ nào của con tàu.",
     explanation: [
       "Bước 1: Khái niệm Tập chặn (Hitting Set): Tập hợp các ô bắn cần giao với mọi vị trí tàu kích thước 1 × 3 và 3 × 1 trên bảng 4 × 4.",
       "Bước 2: Chứng minh 4 phát bắn là chưa đủ: Bảng 4 × 4 có 8 đoạn 1 × 3 ngang và 8 đoạn 3 × 1 dọc. Nếu chỉ bắn 4 phát, để chặn 4 hàng ngang ta phải bắn mỗi hàng đúng 1 ô tại cột 2 hoặc cột 3. Khi đó 4 phát bắn chỉ nằm trên cột 2 và 3, để lại cột 1 và cột 4 hoàn toàn trống trơn (mỗi cột này dài 4 ô, dễ dàng chứa vừa con tàu 3 ô dọc). Do đó không thể chặn hết bằng 4 phát bắn.",

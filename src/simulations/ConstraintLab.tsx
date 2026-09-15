@@ -335,7 +335,7 @@ export const ConstraintLab: React.FC<ConstraintLabProps> = ({ config, mode }) =>
               <div className="flex items-center gap-2 rounded-xl border border-rose-200 bg-rose-50 p-3 text-xs font-medium text-rose-900 animate-in fade-in">
                 <AlertCircle className="h-4 w-4 text-rose-600 shrink-0" />
                 <span>
-                  ❌ Có ít nhất một bộ ba vượt quá {limit}: bộ ba [{evaluation.violatingValues?.join(" + ")}] có tổng là <strong>{evaluation.violatingSum} &gt; {limit}</strong>!
+                  ❌ Vi phạm ràng buộc: Tổng 3 số lớn nhất đang là [{evaluation.violatingValues?.join(" + ")}] = <strong>{evaluation.violatingSum} &gt; {limit}</strong>!
                 </span>
               </div>
             )}
@@ -602,10 +602,10 @@ export const ConstraintLab: React.FC<ConstraintLabProps> = ({ config, mode }) =>
           {/* TEACHING POINT */}
           <div className="rounded-xl border border-emerald-300 bg-white p-3 space-y-1 text-center text-xs">
             <p className="font-extrabold text-emerald-950">
-              Teaching Point: “Muốn chứng minh một giá trị là lớn nhất, cần làm hai việc: 1. Chứng minh không thể vượt qua nó. 2. Chỉ ra một cách đạt được nó.”
+              Teaching Point: “Muốn kiểm soát tổng của bất kỳ 3 số nào, chỉ cần kiểm soát tổng của 3 số lớn nhất.”
             </p>
             <p className="text-[11px] text-emerald-700 font-semibold">
-              “Tối ưu = Mục tiêu + Ràng buộc.”
+              “Và muốn khẳng định 42 là lớn nhất: 1. Chứng minh không thể vượt qua 42. 2. Chỉ ra ít nhất một cách đạt được 42.”
             </p>
           </div>
         </div>

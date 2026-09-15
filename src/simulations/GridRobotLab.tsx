@@ -293,7 +293,7 @@ export const GridRobotLab: React.FC<GridRobotLabProps> = ({ config, mode }) => {
     } else {
       setPredictionFeedback({
         ok: false,
-        text: `Kiểm tra lại phép chia: ${currentCell} chia cho ${divisor} = ${(currentCell / divisor).toFixed(1)}. Hãy thử lại!`,
+        text: `❌ Chưa chính xác! Em hãy kiểm tra lại cả vị trí VÀ hướng của robot. (${currentCell} chia cho ${divisor} = ${(currentCell / divisor).toFixed(1)}). Hãy thử lại!`,
       });
     }
   };
@@ -547,9 +547,14 @@ export const GridRobotLab: React.FC<GridRobotLabProps> = ({ config, mode }) => {
         <div className="lg:col-span-5 space-y-4">
           {/* Current State Card */}
           <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-2xs space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
-              Bảng Trạng Thái Robot (State)
-            </span>
+            <div className="space-y-1">
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block">
+                Bảng Trạng Thái Robot (State)
+              </span>
+              <p className="text-[11px] text-slate-500 italic">
+                “Muốn biết robot sẽ làm gì tiếp, ta phải biết nó đang ở đâu và đang quay mặt về đâu.”
+              </p>
+            </div>
 
             <div className="grid grid-cols-3 gap-2 text-center text-xs">
               <div className="rounded-xl border border-slate-100 bg-slate-50 p-2.5">

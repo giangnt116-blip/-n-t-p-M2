@@ -133,7 +133,7 @@ export const GraphPathLab: React.FC<GraphPathLabProps> = ({ config, mode }) => {
       if (currentPath.includes(clickedId)) {
         setFeedback({
           type: "info",
-          text: `Em đã từng đi qua đảo ${clickedId}. Hãy tiếp tục đi về phía đích.`,
+          text: `Đảo ${clickedId} đã có trong lộ trình. Có đường nào không quay lại đỉnh đã đi không? Hãy tiếp tục hướng về đích.`,
         });
         return;
       }
@@ -646,7 +646,7 @@ export const GraphPathLab: React.FC<GraphPathLabProps> = ({ config, mode }) => {
 
           <div className="rounded-xl border border-emerald-300 bg-white p-3 text-center space-y-1">
             <p className="text-xs font-bold text-emerald-900">
-              Teaching Point: “Bài toán gồm các địa điểm và đường nối thường có thể biểu diễn bằng graph. Đường đi ngắn nhất là đường dùng ít cạnh nhất.”
+              Teaching Point: “Khám phá đồ thị là tìm đường đi thỏa mãn ràng buộc. Đường đi ngắn nhất là đường dùng ít cạnh nhất nối từ điểm xuất phát tới đích.”
             </p>
           </div>
         </div>

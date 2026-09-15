@@ -27,14 +27,15 @@ export const CoursePage: React.FC<CoursePageProps> = ({ onNavigate }) => {
       <div className="space-y-3 text-center">
         <div className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-3.5 py-1 text-xs font-bold text-indigo-700">
           <Compass className="h-3.5 w-3.5" />
-          <span>LỘ TRÌNH HUẤN LUYỆN TƯ DUY 12 TUẦN</span>
+          <span>GIAI ĐOẠN 1 – ÔN TẬP ĐẦU VÀO</span>
         </div>
         <h1 className="text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
           Hành trình Chinh phục M2 từng bước
         </h1>
         <p className="mx-auto max-w-2xl text-xs sm:text-sm text-slate-600 leading-relaxed">
-          Khóa học được cấu trúc theo chuỗi phát triển năng lực tư duy toán tin chuẩn hóa.
-          Bắt đầu từ <strong>Module 0</strong> để đánh giá khởi động, sau đó từng tuần học chuyên sâu sẽ lần lượt được mở khóa.
+          Hiện tại: <strong>Ôn tập đầu vào M2 dành cho học sinh lớp 6.</strong>
+          <br className="hidden sm:inline" />
+          Em hãy hoàn thành 12 thử thách ôn tập đầu vào để đánh giá năng lực xuất phát trước khi bước vào các tuần học tiếp theo.
         </p>
       </div>
 
@@ -55,7 +56,7 @@ export const CoursePage: React.FC<CoursePageProps> = ({ onNavigate }) => {
         <div className="mx-auto max-w-2xl">
           <div className="mb-2 text-center">
             <span className="text-xs font-bold text-emerald-600 uppercase tracking-wider">
-              ✦ Cổng khởi động hiện tại
+              ✦ Cổng ôn tập hiện tại
             </span>
           </div>
           <RoadmapCard
@@ -66,11 +67,12 @@ export const CoursePage: React.FC<CoursePageProps> = ({ onNavigate }) => {
         </div>
 
         {/* Pathway divider */}
-        <div className="flex flex-col items-center justify-center text-center my-4">
+        <div className="flex flex-col items-center justify-center text-center my-6 space-y-2">
           <ArrowDown className="h-6 w-6 text-slate-300" />
-          <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mt-1">
-            Giai đoạn rèn luyện chuyên sâu 12 tuần
-          </span>
+          <div className="inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-xs font-bold text-amber-900 shadow-2xs">
+            <Lock className="h-3.5 w-3.5 text-amber-700" />
+            <span>🔒 Chương trình đội tuyển 12 tuần – Sẽ mở sau</span>
+          </div>
         </div>
 
         {/* WEEKS 01 - 12 GRID */}

@@ -42,8 +42,11 @@ export const TakeAwayGame: React.FC<TakeAwayGameProps> = ({ config, mode }) => {
   const [currentTurn, setCurrentTurn] = useState<"student" | "ai">("student");
   const [winner, setWinner] = useState<"student" | "ai" | null>(null);
   const [moveHistory, setMoveHistory] = useState<MoveHistoryItem[]>([]);
-  const [aiMode, setAiMode] = useState<"random" | "optimal">("optimal");
+  const [aiMode, setAiMode] = useState<"random" | "optimal">(
+    mode === "learn" ? "optimal" : "random"
+  );
   const [isAiThinking, setIsAiThinking] = useState<boolean>(false);
+  const [completedGamesCount, setCompletedGamesCount] = useState<number>(0);
 
   // Learn Mode toggles
   const [showStrategyMap, setShowStrategyMap] = useState<boolean>(mode === "learn");
@@ -73,6 +76,7 @@ export const TakeAwayGame: React.FC<TakeAwayGameProps> = ({ config, mode }) => {
 
     if (remaining === 0) {
       setWinner("student");
+      setCompletedGamesCount((prev) => prev + 1);
       return;
     }
 
@@ -101,6 +105,7 @@ export const TakeAwayGame: React.FC<TakeAwayGameProps> = ({ config, mode }) => {
 
     if (afterAi === 0) {
       setWinner("ai");
+      setCompletedGamesCount((prev) => prev + 1);
     } else {
       setCurrentTurn("student");
     }
@@ -273,7 +278,9 @@ export const TakeAwayGame: React.FC<TakeAwayGameProps> = ({ config, mode }) => {
           <span>Sách trên bàn ({currentItems} quyển):</span>
           <span className="text-[11px] font-mono text-slate-400">
             {currentItems > 0
-              ? `${currentItems} chia 5 = dư ${currentItems % 5}`
+              ? mode === "learn"
+                ? `${currentItems} quyển (chia 5 dư ${currentItems % 5})`
+                : `${currentItems} quyển`
               : "Đã hết sách"}
           </span>
         </div>
@@ -302,12 +309,21 @@ export const TakeAwayGame: React.FC<TakeAwayGameProps> = ({ config, mode }) => {
         {/* PLAYER ACTION CONTROLS */}
         <div className="border-t border-slate-100 pt-3 space-y-3">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="text-xs font-bold text-slate-700">
-              {winner
-                ? "Bấm 'Ván mới' để chơi lại và thử chiến thuật khác!"
-                : currentTurn === "student"
-                ? "Lượt của bạn: Hãy chọn số quyển sách bạn muốn bốc:"
-                : "Đang đợi đối thủ bốc..."}
+            <div className="space-y-0.5">
+              <div className="text-xs font-bold text-slate-700">
+                {winner
+                  ? "Bấm 'Ván mới' để chơi lại và thử chiến thuật khác!"
+                  : currentTurn === "student"
+                  ? "Lượt của bạn: Hãy chọn số quyển sách bạn muốn bốc:"
+                  : "Đang đợi đối thủ bốc..."}
+              </div>
+              {!winner && (
+                <div className="text-[11px] text-slate-500 italic">
+                  💡 {mode === "learn" || completedGamesCount >= 2
+                    ? "Có những số lượng sách nào khiến người đến lượt gặp bất lợi không?"
+                    : "Em hãy thử chơi vài ván. Có những số lượng sách nào khiến người đến lượt gặp bất lợi không?"}
+                </div>
+              )}
             </div>
 
             {/* Take Buttons */}
@@ -416,7 +432,7 @@ export const TakeAwayGame: React.FC<TakeAwayGameProps> = ({ config, mode }) => {
 
           <div className="rounded-xl border border-emerald-300 bg-white p-3 text-center space-y-1">
             <p className="text-xs font-bold text-emerald-900">
-              Teaching Point: “Tìm trạng thái nên để lại cho đối thủ (P-position).”
+              Teaching Point: “Tìm trạng thái mà em muốn để lại cho đối thủ. Nếu Bob bốc x quyển thì Alice bốc 5 - x quyển để giữ vững các mốc an toàn 15, 10, 5.”
             </p>
           </div>
         </div>

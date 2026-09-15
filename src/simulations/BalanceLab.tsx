@@ -377,7 +377,7 @@ export const BalanceLab: React.FC<BalanceLabProps> = ({ config, mode }) => {
             <span>🍎 1 Quả Táo</span>
           </div>
           <p className="text-xs font-bold text-emerald-800">
-            Teaching Point: “Loại bỏ phần giống nhau ở hai phía.”
+            Teaching Point: “Cân bằng nghĩa là tổng hai vế bằng nhau. Ta có thể loại bỏ phần giống nhau ở hai phía mà vẫn bảo toàn trạng thái cân bằng.”
           </p>
         </div>
       )}

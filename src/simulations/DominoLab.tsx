@@ -127,7 +127,7 @@ export const DominoLab: React.FC<DominoLabProps> = ({ config, mode }) => {
     if (!canConnect(lastPlaced, currentOrientation.a)) {
       setFeedback({
         ok: false,
-        text: `❌ Chưa hợp lệ: Đầu ${lastPlaced?.b} cần nối với một đầu ${lastPlaced?.b}. Quân bạn chọn đang có đầu trái là ${currentOrientation.a}. Hãy bấm nút xoay ↻ nếu muốn lật đầu!`,
+        text: `❌ Hai số ở chỗ nối không giống nhau. Đầu này cần số ${lastPlaced?.b}, nhưng quân bạn chọn có số ${currentOrientation.a}. Hãy bấm nút xoay ↻ nếu quân có số ${lastPlaced?.b} ở đầu kia!`,
       });
       return;
     }
@@ -514,18 +514,18 @@ export const DominoLab: React.FC<DominoLabProps> = ({ config, mode }) => {
                         <td className="p-2.5">
                           {isOdd ? (
                             <span className="rounded-md bg-amber-200/80 px-2 py-0.5 text-[11px] text-amber-900 font-extrabold">
-                              Số lẻ (Bậc lẻ)
+                              Xuất hiện lẻ lần
                             </span>
                           ) : (
                             <span className="rounded-md bg-emerald-100 px-2 py-0.5 text-[11px] text-emerald-800">
-                              Số chẵn (Bậc chẵn)
+                              Xuất hiện chẵn lần
                             </span>
                           )}
                         </td>
                         <td className="p-2.5 text-[11px] text-slate-600">
                           {isOdd
                             ? "→ Phải là điểm BẮT ĐẦU hoặc KẾT THÚC của chuỗi!"
-                            : "→ Là điểm TRUNG GIAN (đi vào rồi lại đi ra)."}
+                            : "→ Là điểm Ở GIỮA CHUỖI (mỗi lần đi vào phải đi ra)."}
                         </td>
                       </tr>
                     );
@@ -536,7 +536,7 @@ export const DominoLab: React.FC<DominoLabProps> = ({ config, mode }) => {
 
           <div className="rounded-xl border border-emerald-300 bg-white p-3 text-center space-y-1">
             <p className="text-xs font-bold text-emerald-900">
-              Teaching Point: “Hai số xuất hiện lẻ lần có thể trở thành hai đầu của chuỗi. Em sẽ gặp ý tưởng này sâu hơn ở phần Graph (Đường đi Euler).”
+              Teaching Point: “Hai đầu đặc biệt của chuỗi liên quan đến những số xuất hiện lẻ lần. Các số ở giữa luôn xuất hiện theo cặp vào-ra nên phải có số lần chẵn.”
             </p>
           </div>
         </div>

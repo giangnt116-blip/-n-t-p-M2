@@ -449,7 +449,7 @@ export const ArrangementLab: React.FC<ArrangementLabProps> = ({ config, mode }) 
               <div className="space-y-2">
                 <div className="flex items-center gap-2 rounded-xl border border-rose-200 bg-rose-50 p-3 text-xs font-medium text-rose-900">
                   <AlertCircle className="h-4 w-4 text-rose-600 shrink-0" />
-                  <span>❌ Cách xếp này chưa thỏa mãn tất cả điều kiện.</span>
+                  <span>❌ Có ít nhất một điều kiện chưa được thỏa mãn.</span>
                 </div>
 
                 {/* If detailed check requested, show breakdown */}
@@ -586,7 +586,7 @@ export const ArrangementLab: React.FC<ArrangementLabProps> = ({ config, mode }) 
 
           <div className="rounded-xl border border-emerald-300 bg-white p-3 text-center space-y-1">
             <p className="text-xs font-bold text-emerald-900">
-              Teaching Point: “Chia bài toán thành các trường hợp nhỏ giúp ta đếm có hệ thống.”
+              Teaching Point: “Chia trường hợp theo phần tử đặc biệt (như vị trí của C) giúp bài toán đơn giản hơn nhiều so với thử ngẫu nhiên 120 cách.”
             </p>
           </div>
         </div>

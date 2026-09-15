@@ -436,7 +436,7 @@ export const BattleshipLab: React.FC<BattleshipLabProps> = ({ config, mode }) =>
                         <span>❌ Chưa đảm bảo trúng!</span>
                       </div>
                       <p>
-                        Vẫn còn ít nhất một cách giấu tàu tránh được các phát bắn của em!
+                        Vẫn có tàu 1x3 tránh được tất cả các phát bắn của em!
                       </p>
                       <p className="text-[11px] text-rose-700">
                         Hiện tại chiến thuật của em mới chỉ chặn được <strong>{coverage.coveredCount} / {allPlacements.length}</strong> vị trí có thể đặt tàu.
@@ -763,10 +763,10 @@ export const BattleshipLab: React.FC<BattleshipLabProps> = ({ config, mode }) =>
           {/* TEACHING POINT */}
           <div className="rounded-xl border border-sky-300 bg-white p-3 space-y-1 text-center text-xs">
             <p className="font-extrabold text-sky-950">
-              Teaching Point: “Để chứng minh một chiến thuật là tối ưu, cần hai phần: 1. Chứng minh ít hơn thì không thể. 2. Chỉ ra một cách đạt được.”
+              Teaching Point: “Muốn CHẮC CHẮN trúng, không được để sót bất kỳ vị trí hợp lệ nào của con tàu.”
             </p>
             <p className="text-[11px] text-sky-700 font-semibold">
-              “Liên hệ D11 & D12: D11 chứng minh không vượt quá 42 và chỉ ra cách đạt 42. D12 chứng minh 4 phát không đủ và chỉ ra cách 5 phát thắng chắc.”
+              “Để chứng minh 5 phát là ít nhất: 1. Chứng minh 4 phát luôn để sót cột trống. 2. Chỉ ra cách đặt 5 phát chặn đứng toàn bộ 16 vị trí.”
             </p>
           </div>
         </div>

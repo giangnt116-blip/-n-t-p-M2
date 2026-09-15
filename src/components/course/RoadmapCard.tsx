@@ -56,7 +56,7 @@ export const RoadmapCard: React.FC<RoadmapCardProps> = ({
         ) : (
           <span className="flex items-center gap-1 text-xs font-bold text-slate-500">
             <Lock className="h-3.5 w-3.5 text-slate-400" />
-            🔒 Chưa mở
+            Sẽ mở sau
           </span>
         )}
       </div>
@@ -114,12 +114,12 @@ export const RoadmapCard: React.FC<RoadmapCardProps> = ({
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-indigo-600 py-3 text-xs font-bold text-white shadow-sm hover:bg-indigo-700 active:scale-95 transition"
             >
               <Play className="h-4 w-4 fill-white" />
-              <span>{progressPercent > 0 ? "Tiếp tục thử thách" : "Bắt đầu Module 0"}</span>
+              <span>{progressPercent > 0 ? "Tiếp tục ôn tập" : "Bắt đầu ôn tập"}</span>
             </button>
           ) : (
             <div className="flex w-full items-center justify-center gap-2 rounded-xl border border-dashed border-slate-300 py-2.5 text-xs font-semibold text-slate-400 bg-slate-100/50 cursor-not-allowed">
-              <Lock className="h-3.5 w-3.5" />
-              <span>Sẽ mở sau khi hoàn thành Module trước</span>
+              <Lock className="h-3.5 w-3.5 text-slate-400" />
+              <span>🔒 Chương trình đội tuyển 12 tuần – Sẽ mở sau</span>
             </div>
           )}
         </div>

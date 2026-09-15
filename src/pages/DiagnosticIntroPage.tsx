@@ -36,12 +36,16 @@ export const DiagnosticIntroPage: React.FC<DiagnosticIntroPageProps> = ({
       <div className="rounded-3xl border border-indigo-100 bg-gradient-to-b from-indigo-50/60 to-white p-8 sm:p-12 text-center shadow-xs space-y-4">
         <div className="inline-flex items-center gap-2 rounded-full bg-indigo-100/70 px-3.5 py-1 text-xs font-bold text-indigo-800">
           <Compass className="h-3.5 w-3.5" />
-          <span>MODULE 0 • ĐÁNH GIÁ KHỞI ĐẦU</span>
+          <span>GIAI ĐOẠN 1 • ÔN TẬP ĐẦU VÀO</span>
         </div>
 
         <h1 className="text-3xl font-black tracking-tight text-slate-900 sm:text-4xl">
-          THỬ THÁCH KHỞI ĐỘNG M2
+          ÔN TẬP ĐẦU VÀO M2
         </h1>
+
+        <div className="inline-block rounded-xl border border-indigo-200/80 bg-indigo-50/80 px-4 py-1.5 text-xs sm:text-sm font-bold text-indigo-900">
+          Hiện tại: Ôn tập đầu vào M2 dành cho học sinh lớp 6.
+        </div>
 
         <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-slate-600 pt-1">
           <span className="flex items-center gap-1 rounded-lg bg-white px-3 py-1.5 shadow-2xs border border-slate-200">
@@ -91,8 +95,8 @@ export const DiagnosticIntroPage: React.FC<DiagnosticIntroPageProps> = ({
             <Rocket className="h-5 w-5 text-amber-300" />
             <span>
               {answeredCount > 0
-                ? `TIẾP TỤC BÀI LÀM (${answeredCount}/12 CÂU)`
-                : "🚀 BẮT ĐẦU THỬ THÁCH"}
+                ? `Tiếp tục ôn tập (${answeredCount}/12 câu)`
+                : "Bắt đầu ôn tập"}
             </span>
           </button>
         </div>

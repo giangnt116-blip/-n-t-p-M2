@@ -30,15 +30,15 @@ export const ResultPage: React.FC<ResultPageProps> = ({ onNavigate }) => {
         <div className="mx-auto max-w-xl space-y-4">
           <div className="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-1 text-xs font-bold text-emerald-800">
             <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-            <span>ĐÃ HOÀN THÀNH MODULE 0</span>
+            <span>GIAI ĐOẠN 1 • HOÀN THÀNH ÔN TẬP ĐẦU VÀO</span>
           </div>
 
           <h1 className="text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
-            🎉 HOÀN THÀNH THỬ THÁCH KHỞI ĐỘNG
+            🎉 HOÀN THÀNH ÔN TẬP ĐẦU VÀO
           </h1>
 
           <p className="text-xs sm:text-sm text-slate-600">
-            Xin chúc mừng <strong>{state.studentName}</strong> đã nỗ lực hoàn thành trọn vẹn 12 thử thách tư duy logic M2!
+            Xin chúc mừng <strong>{state.studentName}</strong> đã nỗ lực hoàn thành trọn vẹn 12 thử thách ôn tập đầu vào M2!
           </p>
 
           {/* Big Score Card */}
@@ -82,7 +82,7 @@ export const ResultPage: React.FC<ResultPageProps> = ({ onNavigate }) => {
               className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-2xl bg-indigo-600 px-6 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-indigo-700 active:scale-95 transition"
             >
               <BookOpen className="h-4 w-4" />
-              <span>🔍 Xem lại bài (Học chi tiết)</span>
+              <span>Xem lại & Luyện</span>
             </button>
 
             <button

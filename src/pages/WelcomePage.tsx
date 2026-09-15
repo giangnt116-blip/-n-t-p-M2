@@ -10,6 +10,7 @@ import {
   ArrowRight,
   ShieldCheck,
   CheckCircle2,
+  BookOpen,
 } from "lucide-react";
 import { loadDiagnosticState } from "../utils/storage";
 
@@ -24,7 +25,7 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({ onNavigate }) => {
   const keyPoints = [
     {
       icon: "🎯",
-      title: "12 thử thách khởi động",
+      title: "12 thử thách ôn tập đầu vào",
       desc: "Được thiết kế chuẩn cấu trúc tư duy M2 nhằm đánh giá toàn diện năng lực xuất phát.",
     },
     {
@@ -66,12 +67,12 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({ onNavigate }) => {
         />
 
         <div className="relative z-10 max-w-3xl mx-auto space-y-6">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white/90 px-4 py-1.5 text-xs font-bold text-indigo-700 shadow-2xs backdrop-blur-xs">
-            <span className="text-base">🧠</span>
-            <span>KHÓA HUẤN LUYỆN TƯ DUY LỚP 6</span>
+          {/* Release Stage Badge */}
+          <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white/95 px-4 py-1.5 text-xs font-bold text-indigo-700 shadow-2xs backdrop-blur-xs">
+            <span className="text-base">🚀</span>
+            <span>GIAI ĐOẠN 1 – ÔN TẬP ĐẦU VÀO</span>
             <span className="h-1 w-1 rounded-full bg-indigo-400" />
-            <span className="text-slate-500 font-medium">Bản khởi động</span>
+            <span className="text-slate-500 font-medium">Lớp 6</span>
           </div>
 
           {/* Main Title */}
@@ -84,26 +85,40 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({ onNavigate }) => {
             “Học tư duy bằng mô phỏng – Chinh phục M2 từng bước”
           </p>
 
-          <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          {/* Status Release Banner */}
+          <div className="inline-flex items-center gap-2 rounded-2xl border border-indigo-200/80 bg-indigo-50/80 px-5 py-2.5 text-xs sm:text-sm font-bold text-indigo-900 shadow-2xs">
+            <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span>Hiện tại: Ôn tập đầu vào M2 dành cho học sinh lớp 6.</span>
+          </div>
+
+          <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mx-auto leading-relaxed">
             Chào mừng em đến với không gian trải nghiệm tư duy logic hiện đại. Tại đây, em không học vẹt lý thuyết mà sẽ trực tiếp khám phá các quy luật bí ẩn đằng sau các bài toán M2 hàng đầu.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-4">
+          {/* Prioritized CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
             <button
               onClick={() => onNavigate("/diagnostic")}
               className="flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-2xl bg-indigo-600 px-8 py-4 text-base font-extrabold text-white shadow-md shadow-indigo-200 hover:bg-indigo-700 active:scale-95 transition"
             >
               <Rocket className="h-5 w-5 text-amber-300" />
-              <span>{answeredCount > 0 ? "TIẾP TỤC THỬ THÁCH" : "🚀 BẮT ĐẦU KHÁM PHÁ"}</span>
+              <span>{answeredCount > 0 ? "Tiếp tục ôn tập" : "Bắt đầu ôn tập"}</span>
+            </button>
+
+            <button
+              onClick={() => onNavigate("/review")}
+              className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-2xl border border-slate-300 bg-white px-6 py-4 text-sm font-bold text-slate-700 shadow-2xs hover:bg-slate-50 active:scale-95 transition"
+            >
+              <BookOpen className="h-4 w-4 text-indigo-600" />
+              <span>Xem lại & Luyện</span>
             </button>
 
             <button
               onClick={() => onNavigate("/course")}
-              className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-2xl border border-slate-300 bg-white px-6 py-4 text-sm font-bold text-slate-700 shadow-2xs hover:bg-slate-50 active:scale-95 transition"
+              className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-2xl border border-dashed border-slate-300 bg-slate-50/60 px-5 py-4 text-xs font-bold text-slate-600 hover:bg-slate-100 transition"
             >
-              <Compass className="h-4 w-4 text-indigo-600" />
-              <span>Xem lộ trình 12 tuần</span>
+              <Compass className="h-4 w-4 text-slate-500" />
+              <span>Lộ trình 12 tuần</span>
             </button>
           </div>
 
@@ -179,23 +194,32 @@ export const WelcomePage: React.FC<WelcomePageProps> = ({ onNavigate }) => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 text-center md:text-left">
             <span className="rounded-full bg-indigo-500/30 px-3 py-1 text-xs font-bold text-indigo-300">
-              MODULE 0 • ÔN TẬP ĐẦU VÀO
+              GIAI ĐOẠN 1 • ÔN TẬP ĐẦU VÀO
             </span>
             <h3 className="text-2xl font-extrabold text-white sm:text-3xl">
-              Sẵn sàng làm bài khảo sát 12 câu?
+              Sẵn sàng cho 12 thử thách ôn tập đầu vào?
             </h3>
             <p className="text-xs sm:text-sm text-indigo-200 max-w-xl">
-              Khoảng 45–60 phút khám phá giúp phát hiện điểm mạnh và các kỹ năng cần bổ trợ trước khi bước vào 12 tuần huấn luyện chuyên sâu.
+              Khoảng 45–60 phút khám phá giúp phát hiện điểm mạnh và các kỹ năng cần bổ trợ trước khi bước vào chương trình đội tuyển 12 tuần.
             </p>
           </div>
 
-          <button
-            onClick={() => onNavigate("/diagnostic")}
-            className="shrink-0 flex items-center gap-2 rounded-2xl bg-white px-7 py-3.5 text-sm font-extrabold text-indigo-950 shadow-md hover:bg-indigo-50 active:scale-95 transition"
-          >
-            <span>Vào thử thách ngay</span>
-            <ArrowRight className="h-4 w-4" />
-          </button>
+          <div className="flex flex-col sm:flex-row items-center gap-3">
+            <button
+              onClick={() => onNavigate("/diagnostic")}
+              className="shrink-0 flex items-center gap-2 rounded-2xl bg-white px-7 py-3.5 text-sm font-extrabold text-indigo-950 shadow-md hover:bg-indigo-50 active:scale-95 transition"
+            >
+              <span>{answeredCount > 0 ? "Tiếp tục ôn tập" : "Bắt đầu ôn tập"}</span>
+              <ArrowRight className="h-4 w-4" />
+            </button>
+            <button
+              onClick={() => onNavigate("/review")}
+              className="shrink-0 flex items-center gap-2 rounded-2xl border border-indigo-300/30 bg-indigo-950/60 px-5 py-3.5 text-sm font-bold text-indigo-100 hover:bg-indigo-900/60 transition"
+            >
+              <BookOpen className="h-4 w-4" />
+              <span>Xem lại & Luyện</span>
+            </button>
+          </div>
         </div>
       </section>
     </div>

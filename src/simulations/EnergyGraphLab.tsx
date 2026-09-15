@@ -631,9 +631,20 @@ export const EnergyGraphLab: React.FC<EnergyGraphLabProps> = ({
             </div>
 
             {currentNode === targetNode && (
-              <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-xs text-emerald-950 font-bold flex items-center justify-between">
-                <span>🎉 Hoàn thành chuyến đi!</span>
-                <span className="font-mono">Pin còn: {currentEnergy}</span>
+              <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-3 text-xs text-emerald-950 font-bold space-y-1.5">
+                <div className="flex items-center justify-between">
+                  <span>🎉 Hoàn thành chuyến đi!</span>
+                  <span className="font-mono font-black text-emerald-800 bg-white px-2 py-0.5 rounded border border-emerald-200">Pin còn: {currentEnergy}</span>
+                </div>
+                {currentEnergy < 7 ? (
+                  <p className="text-[11px] font-normal text-amber-800 leading-relaxed">
+                    💡 Đường này để lại ít pin hơn một đường khác. Thử suy nghĩ: <em>Đường ít cạnh nhất có chắc để lại nhiều pin nhất không?</em>
+                  </p>
+                ) : (
+                  <p className="text-[11px] font-normal text-emerald-800 leading-relaxed">
+                    ⭐ Xuất sắc! Đây chính là lượng pin tối đa có thể bảo toàn khi tới đích.
+                  </p>
+                )}
               </div>
             )}
 
@@ -774,7 +785,7 @@ export const EnergyGraphLab: React.FC<EnergyGraphLabProps> = ({
               </span>
             </div>
             <div className="text-center font-bold text-emerald-900 pt-1">
-              Teaching Point: “Đường nhiều bước hơn chưa chắc kém hơn. Muốn tối ưu, hãy so sánh kết quả cuối cùng của các phương án.”
+              Teaching Point: “Đường ngắn nhất chưa chắc là phương án tốt nhất. Muốn tối ưu, hãy so sánh kết quả pin cuối cùng của tất cả các phương án khả thi.”
             </div>
           </div>
         </div>

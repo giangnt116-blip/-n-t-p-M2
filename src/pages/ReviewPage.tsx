@@ -104,11 +104,11 @@ export const ReviewPage: React.FC<ReviewPageProps> = ({ onNavigate }) => {
         <div>
           <div className="flex items-center gap-2">
             <span className="rounded-full bg-emerald-100 px-3 py-0.5 text-xs font-bold text-emerald-800">
-              CHẾ ĐỘ HỌC TẬP (LEARN MODE)
+              GIAI ĐOẠN 1 • XEM LẠI & LUYỆN
             </span>
           </div>
           <h1 className="text-2xl font-black text-slate-900 sm:text-3xl mt-1">
-            Xem lại & Phân tích lời giải 12 câu
+            Xem lại & Luyện 12 thử thách ôn tập đầu vào
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 mt-1">
             Đọc kỹ teaching point và từng bước tư duy để rút ra bài học cho các tuần tiếp theo.

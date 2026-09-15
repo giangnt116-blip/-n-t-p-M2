@@ -26,7 +26,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate, onResetPr
   const navItems = [
     { path: "/", label: "Khám phá", icon: Brain },
     { path: "/course", label: "Lộ trình 12 tuần", icon: Map },
-    { path: "/diagnostic", label: "Thử thách M0", icon: PlayCircle },
+    { path: "/diagnostic", label: "Ôn tập đầu vào", icon: PlayCircle },
     { path: "/review", label: "Xem lại & Luyện", icon: BookOpen },
   ];
 
@@ -111,8 +111,12 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, navigate, onResetPr
             className="flex items-center gap-1.5 rounded-xl bg-indigo-600 px-3.5 py-2 text-xs font-bold text-white shadow-sm hover:bg-indigo-700 active:scale-95 transition"
           >
             <span>🚀</span>
-            <span className="hidden sm:inline">Vào thử thách</span>
-            <span className="sm:hidden">Làm bài</span>
+            <span className="hidden sm:inline">
+              {answeredCount > 0 ? "Tiếp tục ôn tập" : "Bắt đầu ôn tập"}
+            </span>
+            <span className="sm:hidden">
+              {answeredCount > 0 ? "Tiếp tục" : "Bắt đầu"}
+            </span>
           </button>
         </div>
       </div>
