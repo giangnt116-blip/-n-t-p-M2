@@ -280,6 +280,16 @@ export const SKILLS_DICTIONARY: Record<string, SkillMeta> = {
     badgeBorder: "border-purple-200",
     description: "Quan sát các đoạn liên tiếp có độ dài cố định để thiết lập cận trên và tối ưu hóa.",
   },
+  integer_reasoning: {
+    id: "integer_reasoning",
+    name: "Integer Reasoning",
+    vietnameseLabel: "Biện luận Nghiệm nguyên",
+    icon: "Calculator",
+    color: "text-amber-600",
+    badgeBg: "bg-amber-50 text-amber-700",
+    badgeBorder: "border-amber-200",
+    description: "Thiết lập quan hệ nghiệm nguyên, bất đẳng thức và giới hạn biến số.",
+  },
 };
 
 export const CORE_SKILL_GROUPS = [

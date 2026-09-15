@@ -208,7 +208,7 @@ export const ReviewPage: React.FC<ReviewPageProps> = ({ onNavigate }) => {
           }`}
         >
           <Sparkles className="h-4 w-4" />
-          <span>PHẦN B: Củng cố tư duy (D13–D19)</span>
+          <span>PHẦN B: Củng cố tư duy (D13–D20)</span>
         </button>
       </div>
 

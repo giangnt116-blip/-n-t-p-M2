@@ -122,8 +122,8 @@ export const DiagnosticPage: React.FC<DiagnosticPageProps> = ({
       return;
     }
 
-    // If currently at D19 (end of currently available Part B questions)
-    if (currentQuestion.id === "D19") {
+    // If currently at D20 (end of currently available Part B questions)
+    if (currentQuestion.id === "D20") {
       // Can review or go to result/overview
       onNavigate("/result");
       return;

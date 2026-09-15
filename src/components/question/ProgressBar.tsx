@@ -86,7 +86,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
             }`}
           >
             <Sparkles className="h-3.5 w-3.5 text-amber-500" />
-            <span>PHẦN B: Củng cố ({partBAnswered}/{partBAvailableCount} sẵn sàng)</span>
+            <span>PHẦN B: Củng cố ({partBAnswered}/{partBQuestions.length})</span>
           </button>
         </div>
 
@@ -112,7 +112,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
                 </span>
                 <span className="flex items-center gap-1">
                   <span className="h-2 w-2 rounded-full bg-amber-400" />
-                  D13–D15 mở • D16–D22 sắp mở
+                  D13–D20 mở • D21–D22 sắp mở
                 </span>
               </>
             )}

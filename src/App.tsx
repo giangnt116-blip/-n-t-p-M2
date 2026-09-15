@@ -8,6 +8,7 @@ import { DiagnosticPage } from "./pages/DiagnosticPage";
 import { ResultPage } from "./pages/ResultPage";
 import { ReviewPage } from "./pages/ReviewPage";
 import { DIAGNOSTIC_QUESTIONS } from "./data/diagnostic";
+import { AVAILABLE_PART_B_QUESTIONS } from "./data/practice";
 import { ALL_MODULE0_QUESTIONS, getQuestionById } from "./data/allQuestions";
 import { loadDiagnosticState, loadPracticeState } from "./utils/storage";
 
@@ -48,7 +49,7 @@ export default function App() {
     }
     // Then check Part B available questions
     const practiceState = loadPracticeState();
-    const partBAvailable = ["D13", "D14", "D15"];
+    const partBAvailable = AVAILABLE_PART_B_QUESTIONS.map((q) => q.id);
     for (const id of partBAvailable) {
       if (!practiceState.answers[id]) {
         return id;

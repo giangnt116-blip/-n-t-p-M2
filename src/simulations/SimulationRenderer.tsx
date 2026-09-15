@@ -19,6 +19,7 @@ import { LatinSquareLab } from "./LatinSquareLab";
 import { CodeScannerLab } from "./CodeScannerLab";
 import { NumberFilterLab } from "./NumberFilterLab";
 import { WindowOptimizationLab } from "./WindowOptimizationLab";
+import { AnimalLegLab } from "./AnimalLegLab";
 import { SimulationPlaceholder } from "./SimulationPlaceholder";
 
 interface SimulationRendererProps {
@@ -93,6 +94,9 @@ export const SimulationRenderer: React.FC<SimulationRendererProps> = ({
 
     case "windowOptimizationLab":
       return <WindowOptimizationLab config={simulation.config} mode={mode} />;
+
+    case "animalLegLab":
+      return <AnimalLegLab config={simulation.config} mode={mode} />;
 
     default:
       return (
